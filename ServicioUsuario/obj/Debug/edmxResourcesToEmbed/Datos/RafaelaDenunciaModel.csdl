@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RafaelaDenunciaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Denuncias">
+    <Key>
+      <PropertyRef Name="numDenuncia" />
+    </Key>
+    <Property Name="numDenuncia" Type="Int32" Nullable="false" />
+    <Property Name="tituloDenuncia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="detalleDenuncia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="latitudDenuncia" Type="Int32" Nullable="false" />
+    <Property Name="longitudDenuncia" Type="Int32" Nullable="false" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="tipoDenuncia" Type="Int32" Nullable="false" />
+    <Property Name="fechaHoraDenuncia" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.FK__Denuncias__idUsu__47DBAE45" FromRole="Denuncias" ToRole="Usuarios" />
+    <NavigationProperty Name="TipoDenuncias" Relationship="Self.FK__Denuncias__tipoD__15502E78" FromRole="Denuncias" ToRole="TipoDenuncias" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TipoDenuncias">
+    <Key>
+      <PropertyRef Name="tipoDenuncia" />
+    </Key>
+    <Property Name="tipoDenuncia" Type="Int32" Nullable="false" />
+    <Property Name="nombreTipoDenuncia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Denuncias" Relationship="Self.FK__Denuncias__tipoD__15502E78" FromRole="TipoDenuncias" ToRole="Denuncias" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreUsuario" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="apellidoUsuario" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="contraseña" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="fechaNacimiento" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="direccionCasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="latitudCasa" Type="Int32" />
+    <Property Name="longitudCasa" Type="Int32" />
+    <NavigationProperty Name="Denuncias" Relationship="Self.FK__Denuncias__idUsu__47DBAE45" FromRole="Usuarios" ToRole="Denuncias" />
+  </EntityType>
+  <Association Name="FK__Denuncias__idUsu__47DBAE45">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Denuncias" Type="Self.Denuncias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Denuncias">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Denuncias__tipoD__15502E78">
+    <End Role="TipoDenuncias" Type="Self.TipoDenuncias" Multiplicity="1" />
+    <End Role="Denuncias" Type="Self.Denuncias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDenuncias">
+        <PropertyRef Name="tipoDenuncia" />
+      </Principal>
+      <Dependent Role="Denuncias">
+        <PropertyRef Name="tipoDenuncia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RafaelaDenunciaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Denuncias" EntityType="Self.Denuncias" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+    <AssociationSet Name="FK__Denuncias__idUsu__47DBAE45" Association="Self.FK__Denuncias__idUsu__47DBAE45">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Denuncias" EntitySet="Denuncias" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Denuncias__tipoD__15502E78" Association="Self.FK__Denuncias__tipoD__15502E78">
+      <End Role="TipoDenuncias" EntitySet="TipoDenuncias" />
+      <End Role="Denuncias" EntitySet="Denuncias" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
