@@ -17,9 +17,10 @@ namespace ServicioUsuario.Controllers
         private RafaelaDenunciaEntities db = new RafaelaDenunciaEntities();
 
         // GET: api/Usuarios
-        public IQueryable<Usuarios> GetUsuarios()
+        public Usuarios[] GetUsuarios()
         {
-            return db.Usuarios;
+            var result = db.Usuarios.ToArray();
+            return result;
         }
 
         // GET: api/Usuarios/5
