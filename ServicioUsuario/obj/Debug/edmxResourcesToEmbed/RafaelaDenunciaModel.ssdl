@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="RafaelaDenunciaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="RafaelaDenuciaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Denuncias">
     <Key>
       <PropertyRef Name="numDenuncia" />
@@ -7,21 +7,11 @@
     <Property Name="numDenuncia" Type="int" Nullable="false" />
     <Property Name="tituloDenuncia" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="detalleDenuncia" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="latitudDenuncia" Type="float" />
-    <Property Name="longitudDenuncia" Type="float" />
+    <Property Name="latitudDenuncia" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="longitudDenuncia" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="idUsuario" Type="int" Nullable="false" />
     <Property Name="tipoDenuncia" Type="int" Nullable="false" />
     <Property Name="fechaHoraDenuncia" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="TipoDenuncias">
     <Key>
@@ -39,12 +29,12 @@
     <Property Name="apellidoUsuario" Type="nvarchar" MaxLength="70" Nullable="false" />
     <Property Name="mail" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="contraseña" Type="nvarchar" MaxLength="30" Nullable="false" />
-    <Property Name="fechaNacimiento" Type="nvarchar" MaxLength="12" />
+    <Property Name="fechaNacimiento" Type="nvarchar" MaxLength="12" Nullable="false" />
     <Property Name="direccionCasa" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="latitudCasa" Type="float" />
-    <Property Name="longitudCasa" Type="float" />
+    <Property Name="latitudCasa" Type="real" />
+    <Property Name="longitudCasa" Type="real" />
   </EntityType>
-  <Association Name="FK__Denuncias__idUsu__47DBAE45">
+  <Association Name="FK__Denuncias__idUsu__08EA5793">
     <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
     <End Role="Denuncias" Type="Self.Denuncias" Multiplicity="*" />
     <ReferentialConstraint>
@@ -56,7 +46,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Denuncias__tipoD__15502E78">
+  <Association Name="FK__Denuncias__idUsu__0CBAE877">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Denuncias" Type="Self.Denuncias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Denuncias">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Denuncias__tipoD__09DE7BCC">
     <End Role="TipoDenuncias" Type="Self.TipoDenuncias" Multiplicity="1" />
     <End Role="Denuncias" Type="Self.Denuncias" Multiplicity="*" />
     <ReferentialConstraint>
@@ -68,16 +70,35 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="RafaelaDenunciaModelStoreContainer">
+  <Association Name="FK__Denuncias__tipoD__0DAF0CB0">
+    <End Role="TipoDenuncias" Type="Self.TipoDenuncias" Multiplicity="1" />
+    <End Role="Denuncias" Type="Self.Denuncias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDenuncias">
+        <PropertyRef Name="tipoDenuncia" />
+      </Principal>
+      <Dependent Role="Denuncias">
+        <PropertyRef Name="tipoDenuncia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RafaelaDenuciaModelStoreContainer">
     <EntitySet Name="Denuncias" EntityType="Self.Denuncias" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Denuncias__idUsu__47DBAE45" Association="Self.FK__Denuncias__idUsu__47DBAE45">
+    <AssociationSet Name="FK__Denuncias__idUsu__08EA5793" Association="Self.FK__Denuncias__idUsu__08EA5793">
       <End Role="Usuarios" EntitySet="Usuarios" />
       <End Role="Denuncias" EntitySet="Denuncias" />
     </AssociationSet>
-    <AssociationSet Name="FK__Denuncias__tipoD__15502E78" Association="Self.FK__Denuncias__tipoD__15502E78">
+    <AssociationSet Name="FK__Denuncias__idUsu__0CBAE877" Association="Self.FK__Denuncias__idUsu__0CBAE877">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Denuncias" EntitySet="Denuncias" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Denuncias__tipoD__09DE7BCC" Association="Self.FK__Denuncias__tipoD__09DE7BCC">
+      <End Role="TipoDenuncias" EntitySet="TipoDenuncias" />
+      <End Role="Denuncias" EntitySet="Denuncias" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Denuncias__tipoD__0DAF0CB0" Association="Self.FK__Denuncias__tipoD__0DAF0CB0">
       <End Role="TipoDenuncias" EntitySet="TipoDenuncias" />
       <End Role="Denuncias" EntitySet="Denuncias" />
     </AssociationSet>

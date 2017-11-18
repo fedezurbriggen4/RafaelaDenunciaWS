@@ -12,8 +12,8 @@
           <Property Name="numDenuncia" Type="int" Nullable="false" />
           <Property Name="tituloDenuncia" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="detalleDenuncia" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="latitudDenuncia" Type="int" Nullable="false" />
-          <Property Name="longitudDenuncia" Type="int" Nullable="false" />
+          <Property Name="latitudDenuncia" Type="float" />
+          <Property Name="longitudDenuncia" Type="float" />
           <Property Name="idUsuario" Type="int" Nullable="false" />
           <Property Name="tipoDenuncia" Type="int" Nullable="false" />
           <Property Name="fechaHoraDenuncia" Type="datetime" Nullable="false" />
@@ -46,8 +46,8 @@
           <Property Name="contraseña" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="fechaNacimiento" Type="nvarchar" MaxLength="12" />
           <Property Name="direccionCasa" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="latitudCasa" Type="int" />
-          <Property Name="longitudCasa" Type="int" />
+          <Property Name="latitudCasa" Type="float" />
+          <Property Name="longitudCasa" Type="float" />
         </EntityType>
         <Association Name="FK__Denuncias__idUsu__47DBAE45">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
@@ -99,8 +99,8 @@
           <Property Name="numDenuncia" Type="Int32" Nullable="false" />
           <Property Name="tituloDenuncia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="detalleDenuncia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="latitudDenuncia" Type="Int32" Nullable="false" />
-          <Property Name="longitudDenuncia" Type="Int32" Nullable="false" />
+          <Property Name="latitudDenuncia" Type="Double" />
+          <Property Name="longitudDenuncia" Type="Double" />
           <Property Name="idUsuario" Type="Int32" Nullable="false" />
           <Property Name="tipoDenuncia" Type="Int32" Nullable="false" />
           <Property Name="fechaHoraDenuncia" Type="DateTime" Nullable="false" Precision="3" />
@@ -136,8 +136,8 @@
           <Property Name="contraseña" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="fechaNacimiento" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
           <Property Name="direccionCasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="latitudCasa" Type="Int32" />
-          <Property Name="longitudCasa" Type="Int32" />
+          <Property Name="latitudCasa" Type="Double" />
+          <Property Name="longitudCasa" Type="Double" />
           <NavigationProperty Name="Denuncias" Relationship="Self.FK__Denuncias__idUsu__47DBAE45" FromRole="Usuarios" ToRole="Denuncias" />
         </EntityType>
         <Association Name="FK__Denuncias__idUsu__47DBAE45">
@@ -164,7 +164,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="RafaelaDenunciaEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="RafaelaDenunciaEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Denuncias" EntityType="Self.Denuncias" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" />
@@ -183,7 +183,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="RafaelaDenunciaModelStoreContainer" CdmEntityContainer="RafaelaDenunciaEntities">
+        <EntityContainerMapping StorageEntityContainer="RafaelaDenunciaModelStoreContainer" CdmEntityContainer="RafaelaDenunciaEntities2">
           <EntitySetMapping Name="Denuncias">
             <EntityTypeMapping TypeName="RafaelaDenunciaModel.Denuncias">
               <MappingFragment StoreEntitySet="Denuncias">

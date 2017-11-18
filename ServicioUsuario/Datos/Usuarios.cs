@@ -27,8 +27,8 @@ namespace ServicioUsuario.Datos
         public string contraseña { get; set; }
         public string fechaNacimiento { get; set; }
         public string direccionCasa { get; set; }
-        public Nullable<int> latitudCasa { get; set; }
-        public Nullable<int> longitudCasa { get; set; }
+        public Nullable<double> latitudCasa { get; set; }
+        public Nullable<double> longitudCasa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Denuncias> Denuncias { get; set; }

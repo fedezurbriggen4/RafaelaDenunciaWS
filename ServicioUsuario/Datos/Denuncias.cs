@@ -17,8 +17,8 @@ namespace ServicioUsuario.Datos
         public int numDenuncia { get; set; }
         public string tituloDenuncia { get; set; }
         public string detalleDenuncia { get; set; }
-        public int latitudDenuncia { get; set; }
-        public int longitudDenuncia { get; set; }
+        public Nullable<double> latitudDenuncia { get; set; }
+        public Nullable<double> longitudDenuncia { get; set; }
         public int idUsuario { get; set; }
         public int tipoDenuncia { get; set; }
         public System.DateTime fechaHoraDenuncia { get; set; }

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RafaelaDenuciaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Denuncias">
+    <Key>
+      <PropertyRef Name="numDenuncia" />
+    </Key>
+    <Property Name="numDenuncia" Type="Int32" Nullable="false" />
+    <Property Name="tituloDenuncia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="detalleDenuncia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="latitudDenuncia" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="longitudDenuncia" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="tipoDenuncia" Type="Int32" Nullable="false" />
+    <Property Name="fechaHoraDenuncia" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.FK__Denuncias__idUsu__08EA5793" FromRole="Denuncias" ToRole="Usuarios" />
+    <NavigationProperty Name="Usuarios1" Relationship="Self.FK__Denuncias__idUsu__0CBAE877" FromRole="Denuncias" ToRole="Usuarios" />
+    <NavigationProperty Name="TipoDenuncias" Relationship="Self.FK__Denuncias__tipoD__09DE7BCC" FromRole="Denuncias" ToRole="TipoDenuncias" />
+    <NavigationProperty Name="TipoDenuncias1" Relationship="Self.FK__Denuncias__tipoD__0DAF0CB0" FromRole="Denuncias" ToRole="TipoDenuncias" />
+  </EntityType>
+  <EntityType Name="TipoDenuncias">
+    <Key>
+      <PropertyRef Name="tipoDenuncia" />
+    </Key>
+    <Property Name="tipoDenuncia" Type="Int32" Nullable="false" />
+    <Property Name="nombreTipoDenuncia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Denuncias" Relationship="Self.FK__Denuncias__tipoD__09DE7BCC" FromRole="TipoDenuncias" ToRole="Denuncias" />
+    <NavigationProperty Name="Denuncias1" Relationship="Self.FK__Denuncias__tipoD__0DAF0CB0" FromRole="TipoDenuncias" ToRole="Denuncias" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreUsuario" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="apellidoUsuario" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="contraseña" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="fechaNacimiento" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="direccionCasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="latitudCasa" Type="Single" />
+    <Property Name="longitudCasa" Type="Single" />
+    <NavigationProperty Name="Denuncias" Relationship="Self.FK__Denuncias__idUsu__08EA5793" FromRole="Usuarios" ToRole="Denuncias" />
+    <NavigationProperty Name="Denuncias1" Relationship="Self.FK__Denuncias__idUsu__0CBAE877" FromRole="Usuarios" ToRole="Denuncias" />
+  </EntityType>
+  <Association Name="FK__Denuncias__idUsu__08EA5793">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Denuncias" Type="Self.Denuncias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Denuncias">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Denuncias__idUsu__0CBAE877">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Denuncias" Type="Self.Denuncias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Denuncias">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Denuncias__tipoD__09DE7BCC">
+    <End Role="TipoDenuncias" Type="Self.TipoDenuncias" Multiplicity="1" />
+    <End Role="Denuncias" Type="Self.Denuncias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDenuncias">
+        <PropertyRef Name="tipoDenuncia" />
+      </Principal>
+      <Dependent Role="Denuncias">
+        <PropertyRef Name="tipoDenuncia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Denuncias__tipoD__0DAF0CB0">
+    <End Role="TipoDenuncias" Type="Self.TipoDenuncias" Multiplicity="1" />
+    <End Role="Denuncias" Type="Self.Denuncias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDenuncias">
+        <PropertyRef Name="tipoDenuncia" />
+      </Principal>
+      <Dependent Role="Denuncias">
+        <PropertyRef Name="tipoDenuncia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="db618888a72af645089397a82a0157c236Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Denuncias" EntityType="Self.Denuncias" />
+    <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+    <AssociationSet Name="FK__Denuncias__idUsu__08EA5793" Association="Self.FK__Denuncias__idUsu__08EA5793">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Denuncias" EntitySet="Denuncias" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Denuncias__idUsu__0CBAE877" Association="Self.FK__Denuncias__idUsu__0CBAE877">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Denuncias" EntitySet="Denuncias" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Denuncias__tipoD__09DE7BCC" Association="Self.FK__Denuncias__tipoD__09DE7BCC">
+      <End Role="TipoDenuncias" EntitySet="TipoDenuncias" />
+      <End Role="Denuncias" EntitySet="Denuncias" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Denuncias__tipoD__0DAF0CB0" Association="Self.FK__Denuncias__tipoD__0DAF0CB0">
+      <End Role="TipoDenuncias" EntitySet="TipoDenuncias" />
+      <End Role="Denuncias" EntitySet="Denuncias" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

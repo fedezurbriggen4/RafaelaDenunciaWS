@@ -213,7 +213,7 @@ C:\Users\federico\Source\Repos\RafaelaDenunciaWS\ServicioUsuario\bin\es\System.W
 C:\Users\federico\Source\Repos\RafaelaDenunciaWS\ServicioUsuario\bin\es\System.Web.WebPages.resources.dll
 C:\Users\federico\Source\Repos\RafaelaDenunciaWS\ServicioUsuario\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\federico\Source\Repos\RafaelaDenunciaWS\ServicioUsuario\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\federico\Source\Repos\RafaelaDenunciaWS\ServicioUsuario\obj\Debug\ServicioUsuario.csprojResolveAssemblyReference.cache
 C:\Users\federico\Source\Repos\RafaelaDenunciaWS\ServicioUsuario\obj\Debug\ServicioUsuario.csproj.CoreCompileInputs.cache
 C:\Users\federico\Source\Repos\RafaelaDenunciaWS\ServicioUsuario\obj\Debug\ServicioUsuario.dll
 C:\Users\federico\Source\Repos\RafaelaDenunciaWS\ServicioUsuario\obj\Debug\ServicioUsuario.pdb
+C:\Users\federico\source\repos\RafaelaDenunciaWS\ServicioUsuario\obj\Debug\ServicioUsuario.csprojResolveAssemblyReference.cache

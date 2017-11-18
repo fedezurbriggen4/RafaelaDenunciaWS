@@ -7,8 +7,8 @@
     <Property Name="numDenuncia" Type="Int32" Nullable="false" />
     <Property Name="tituloDenuncia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="detalleDenuncia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="latitudDenuncia" Type="Int32" Nullable="false" />
-    <Property Name="longitudDenuncia" Type="Int32" Nullable="false" />
+    <Property Name="latitudDenuncia" Type="Double" />
+    <Property Name="longitudDenuncia" Type="Double" />
     <Property Name="idUsuario" Type="Int32" Nullable="false" />
     <Property Name="tipoDenuncia" Type="Int32" Nullable="false" />
     <Property Name="fechaHoraDenuncia" Type="DateTime" Nullable="false" Precision="3" />
@@ -44,8 +44,8 @@
     <Property Name="contraseña" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="fechaNacimiento" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
     <Property Name="direccionCasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="latitudCasa" Type="Int32" />
-    <Property Name="longitudCasa" Type="Int32" />
+    <Property Name="latitudCasa" Type="Double" />
+    <Property Name="longitudCasa" Type="Double" />
     <NavigationProperty Name="Denuncias" Relationship="Self.FK__Denuncias__idUsu__47DBAE45" FromRole="Usuarios" ToRole="Denuncias" />
   </EntityType>
   <Association Name="FK__Denuncias__idUsu__47DBAE45">
@@ -72,7 +72,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="RafaelaDenunciaEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="RafaelaDenunciaEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Denuncias" EntityType="Self.Denuncias" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" />

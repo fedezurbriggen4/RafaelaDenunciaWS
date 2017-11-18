@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="RafaelaDenunciaModelStoreContainer" CdmEntityContainer="RafaelaDenunciaEntities2">
+  <EntityContainerMapping StorageEntityContainer="RafaelaDenuciaModelStoreContainer" CdmEntityContainer="db618888a72af645089397a82a0157c236Entities">
     <EntitySetMapping Name="Denuncias">
-      <EntityTypeMapping TypeName="RafaelaDenunciaModel.Denuncias">
+      <EntityTypeMapping TypeName="RafaelaDenuciaModel.Denuncias">
         <MappingFragment StoreEntitySet="Denuncias">
           <ScalarProperty Name="numDenuncia" ColumnName="numDenuncia" />
           <ScalarProperty Name="tituloDenuncia" ColumnName="tituloDenuncia" />
@@ -15,19 +15,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="RafaelaDenunciaModel.sysdiagrams">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TipoDenuncias">
-      <EntityTypeMapping TypeName="RafaelaDenunciaModel.TipoDenuncias">
+      <EntityTypeMapping TypeName="RafaelaDenuciaModel.TipoDenuncias">
         <MappingFragment StoreEntitySet="TipoDenuncias">
           <ScalarProperty Name="tipoDenuncia" ColumnName="tipoDenuncia" />
           <ScalarProperty Name="nombreTipoDenuncia" ColumnName="nombreTipoDenuncia" />
@@ -35,7 +24,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Usuarios">
-      <EntityTypeMapping TypeName="RafaelaDenunciaModel.Usuarios">
+      <EntityTypeMapping TypeName="RafaelaDenuciaModel.Usuarios">
         <MappingFragment StoreEntitySet="Usuarios">
           <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
           <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
