@@ -14,16 +14,7 @@ namespace ServicioUsuario.Datos
     
     public partial class TipoDenuncias
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TipoDenuncias()
-        {
-            this.Denuncias = new HashSet<Denuncias>();
-        }
-    
         public int tipoDenuncia { get; set; }
         public string nombreTipoDenuncia { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Denuncias> Denuncias { get; set; }
     }
 }

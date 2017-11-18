@@ -12,8 +12,6 @@
     <Property Name="idUsuario" Type="Int32" Nullable="false" />
     <Property Name="tipoDenuncia" Type="Int32" Nullable="false" />
     <Property Name="fechaHoraDenuncia" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="Usuarios" Relationship="Self.FK__Denuncias__idUsu__47DBAE45" FromRole="Denuncias" ToRole="Usuarios" />
-    <NavigationProperty Name="TipoDenuncias" Relationship="Self.FK__Denuncias__tipoD__15502E78" FromRole="Denuncias" ToRole="TipoDenuncias" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -31,7 +29,6 @@
     </Key>
     <Property Name="tipoDenuncia" Type="Int32" Nullable="false" />
     <Property Name="nombreTipoDenuncia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Denuncias" Relationship="Self.FK__Denuncias__tipoD__15502E78" FromRole="TipoDenuncias" ToRole="Denuncias" />
   </EntityType>
   <EntityType Name="Usuarios">
     <Key>
@@ -46,44 +43,11 @@
     <Property Name="direccionCasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="latitudCasa" Type="Double" />
     <Property Name="longitudCasa" Type="Double" />
-    <NavigationProperty Name="Denuncias" Relationship="Self.FK__Denuncias__idUsu__47DBAE45" FromRole="Usuarios" ToRole="Denuncias" />
   </EntityType>
-  <Association Name="FK__Denuncias__idUsu__47DBAE45">
-    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
-    <End Role="Denuncias" Type="Self.Denuncias" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Usuarios">
-        <PropertyRef Name="idUsuario" />
-      </Principal>
-      <Dependent Role="Denuncias">
-        <PropertyRef Name="idUsuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Denuncias__tipoD__15502E78">
-    <End Role="TipoDenuncias" Type="Self.TipoDenuncias" Multiplicity="1" />
-    <End Role="Denuncias" Type="Self.Denuncias" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TipoDenuncias">
-        <PropertyRef Name="tipoDenuncia" />
-      </Principal>
-      <Dependent Role="Denuncias">
-        <PropertyRef Name="tipoDenuncia" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="RafaelaDenunciaEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="RafaelaDenunciaEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Denuncias" EntityType="Self.Denuncias" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
-    <AssociationSet Name="FK__Denuncias__idUsu__47DBAE45" Association="Self.FK__Denuncias__idUsu__47DBAE45">
-      <End Role="Usuarios" EntitySet="Usuarios" />
-      <End Role="Denuncias" EntitySet="Denuncias" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Denuncias__tipoD__15502E78" Association="Self.FK__Denuncias__tipoD__15502E78">
-      <End Role="TipoDenuncias" EntitySet="TipoDenuncias" />
-      <End Role="Denuncias" EntitySet="Denuncias" />
-    </AssociationSet>
   </EntityContainer>
 </Schema>

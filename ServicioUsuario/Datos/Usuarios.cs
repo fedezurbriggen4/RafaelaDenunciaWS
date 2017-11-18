@@ -14,12 +14,6 @@ namespace ServicioUsuario.Datos
     
     public partial class Usuarios
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Usuarios()
-        {
-            this.Denuncias = new HashSet<Denuncias>();
-        }
-    
         public int idUsuario { get; set; }
         public string nombreUsuario { get; set; }
         public string apellidoUsuario { get; set; }
@@ -29,8 +23,5 @@ namespace ServicioUsuario.Datos
         public string direccionCasa { get; set; }
         public Nullable<double> latitudCasa { get; set; }
         public Nullable<double> longitudCasa { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Denuncias> Denuncias { get; set; }
     }
 }

@@ -44,42 +44,10 @@
     <Property Name="latitudCasa" Type="float" />
     <Property Name="longitudCasa" Type="float" />
   </EntityType>
-  <Association Name="FK__Denuncias__idUsu__47DBAE45">
-    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
-    <End Role="Denuncias" Type="Self.Denuncias" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Usuarios">
-        <PropertyRef Name="idUsuario" />
-      </Principal>
-      <Dependent Role="Denuncias">
-        <PropertyRef Name="idUsuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Denuncias__tipoD__15502E78">
-    <End Role="TipoDenuncias" Type="Self.TipoDenuncias" Multiplicity="1" />
-    <End Role="Denuncias" Type="Self.Denuncias" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TipoDenuncias">
-        <PropertyRef Name="tipoDenuncia" />
-      </Principal>
-      <Dependent Role="Denuncias">
-        <PropertyRef Name="tipoDenuncia" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="RafaelaDenunciaModelStoreContainer">
     <EntitySet Name="Denuncias" EntityType="Self.Denuncias" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Denuncias__idUsu__47DBAE45" Association="Self.FK__Denuncias__idUsu__47DBAE45">
-      <End Role="Usuarios" EntitySet="Usuarios" />
-      <End Role="Denuncias" EntitySet="Denuncias" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Denuncias__tipoD__15502E78" Association="Self.FK__Denuncias__tipoD__15502E78">
-      <End Role="TipoDenuncias" EntitySet="TipoDenuncias" />
-      <End Role="Denuncias" EntitySet="Denuncias" />
-    </AssociationSet>
   </EntityContainer>
 </Schema>

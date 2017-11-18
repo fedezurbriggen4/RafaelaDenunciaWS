@@ -22,8 +22,5 @@ namespace ServicioUsuario.Datos
         public int idUsuario { get; set; }
         public int tipoDenuncia { get; set; }
         public System.DateTime fechaHoraDenuncia { get; set; }
-    
-        public virtual Usuarios Usuarios { get; set; }
-        public virtual TipoDenuncias TipoDenuncias { get; set; }
     }
 }
