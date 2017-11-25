@@ -26,7 +26,6 @@ namespace ServicioUsuario.Datos
         }
     
         public virtual DbSet<Denuncias> Denuncias { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TipoDenuncias> TipoDenuncias { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
     }

@@ -207,9 +207,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RafaelaDenunciaModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Datos\sysdiagrams.cs">
-      <DependentUpon>RafaelaDenunciaModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Datos\TipoDenuncias.cs">
       <DependentUpon>RafaelaDenunciaModel.tt</DependentUpon>
     </Compile>

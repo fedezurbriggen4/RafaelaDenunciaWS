@@ -13,16 +13,6 @@
     <Property Name="tipoDenuncia" Type="Int32" Nullable="false" />
     <Property Name="fechaHoraDenuncia" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <EntityType Name="TipoDenuncias">
     <Key>
       <PropertyRef Name="tipoDenuncia" />
@@ -38,15 +28,14 @@
     <Property Name="nombreUsuario" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="apellidoUsuario" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="contraseña" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="fechaNacimiento" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="fechaNacimiento" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="direccionCasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="latitudCasa" Type="Double" />
     <Property Name="longitudCasa" Type="Double" />
   </EntityType>
-  <EntityContainer Name="RafaelaDenunciaEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="db618888a72af645089397a82a0157c236Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Denuncias" EntityType="Self.Denuncias" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
   </EntityContainer>

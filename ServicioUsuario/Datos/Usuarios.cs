@@ -18,7 +18,7 @@ namespace ServicioUsuario.Datos
         public string nombreUsuario { get; set; }
         public string apellidoUsuario { get; set; }
         public string mail { get; set; }
-        public string contraseña { get; set; }
+        public string password { get; set; }
         public string fechaNacimiento { get; set; }
         public string direccionCasa { get; set; }
         public Nullable<double> latitudCasa { get; set; }
