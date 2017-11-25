@@ -83,7 +83,7 @@
           <Property Name="latitudCasa" Type="Double" />
           <Property Name="longitudCasa" Type="Double" />
         </EntityType>
-        <EntityContainer Name="db618888a72af645089397a82a0157c236Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="RafaelaDenunciaEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Denuncias" EntityType="Self.Denuncias" />
           <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
@@ -93,7 +93,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="RafaelaDenunciaModelStoreContainer" CdmEntityContainer="db618888a72af645089397a82a0157c236Entities">
+        <EntityContainerMapping StorageEntityContainer="RafaelaDenunciaModelStoreContainer" CdmEntityContainer="RafaelaDenunciaEntities1">
           <EntitySetMapping Name="Denuncias">
             <EntityTypeMapping TypeName="RafaelaDenunciaModel.Denuncias">
               <MappingFragment StoreEntitySet="Denuncias">
