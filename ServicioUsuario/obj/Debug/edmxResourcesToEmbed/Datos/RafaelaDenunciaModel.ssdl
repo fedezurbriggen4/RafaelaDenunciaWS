@@ -1,17 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="RafaelaDenunciaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Barrios">
+    <Key>
+      <PropertyRef Name="idBarrio" />
+    </Key>
+    <Property Name="idBarrio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreBarrio" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="Denuncias">
     <Key>
       <PropertyRef Name="numDenuncia" />
     </Key>
-    <Property Name="numDenuncia" Type="int" Nullable="false" />
+    <Property Name="numDenuncia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="tituloDenuncia" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="detalleDenuncia" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="latitudDenuncia" Type="float" />
-    <Property Name="longitudDenuncia" Type="float" />
+    <Property Name="latitudDenuncia" Type="float" Nullable="false" />
+    <Property Name="longitudDenuncia" Type="float" Nullable="false" />
     <Property Name="idUsuario" Type="int" Nullable="false" />
     <Property Name="tipoDenuncia" Type="int" Nullable="false" />
     <Property Name="fechaHoraDenuncia" Type="datetime" Nullable="false" />
+    <Property Name="idBarrio" Type="int" />
   </EntityType>
   <EntityType Name="TipoDenuncias">
     <Key>
@@ -33,8 +41,11 @@
     <Property Name="direccionCasa" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="latitudCasa" Type="float" />
     <Property Name="longitudCasa" Type="float" />
+    <Property Name="idBarrio" Type="int" Nullable="false" />
+    <Property Name="telContacto" Type="nvarchar" MaxLength="30" Nullable="false" />
   </EntityType>
   <EntityContainer Name="RafaelaDenunciaModelStoreContainer">
+    <EntitySet Name="Barrios" EntityType="Self.Barrios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Denuncias" EntityType="Self.Denuncias" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />

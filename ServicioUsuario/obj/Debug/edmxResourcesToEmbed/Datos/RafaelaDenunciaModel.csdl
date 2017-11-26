@@ -1,17 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="RafaelaDenunciaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Barrios">
+    <Key>
+      <PropertyRef Name="idBarrio" />
+    </Key>
+    <Property Name="idBarrio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreBarrio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
   <EntityType Name="Denuncias">
     <Key>
       <PropertyRef Name="numDenuncia" />
     </Key>
-    <Property Name="numDenuncia" Type="Int32" Nullable="false" />
+    <Property Name="numDenuncia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="tituloDenuncia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="detalleDenuncia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="latitudDenuncia" Type="Double" />
-    <Property Name="longitudDenuncia" Type="Double" />
+    <Property Name="latitudDenuncia" Type="Double" Nullable="false" />
+    <Property Name="longitudDenuncia" Type="Double" Nullable="false" />
     <Property Name="idUsuario" Type="Int32" Nullable="false" />
     <Property Name="tipoDenuncia" Type="Int32" Nullable="false" />
     <Property Name="fechaHoraDenuncia" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="idBarrio" Type="Int32" />
   </EntityType>
   <EntityType Name="TipoDenuncias">
     <Key>
@@ -33,8 +41,11 @@
     <Property Name="direccionCasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="latitudCasa" Type="Double" />
     <Property Name="longitudCasa" Type="Double" />
+    <Property Name="idBarrio" Type="Int32" Nullable="false" />
+    <Property Name="telContacto" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityContainer Name="RafaelaDenunciaEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Barrios" EntityType="Self.Barrios" />
     <EntitySet Name="Denuncias" EntityType="Self.Denuncias" />
     <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />

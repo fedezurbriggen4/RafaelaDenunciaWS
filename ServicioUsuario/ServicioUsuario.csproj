@@ -184,11 +184,15 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\BarriosController.cs" />
     <Compile Include="Controllers\DenunciasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TipoDenunciasController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Datos\Barrios.cs">
+      <DependentUpon>RafaelaDenunciaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Datos\Denuncias.cs">
       <DependentUpon>RafaelaDenunciaModel.tt</DependentUpon>
     </Compile>

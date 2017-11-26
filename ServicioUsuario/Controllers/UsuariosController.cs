@@ -82,11 +82,25 @@ namespace ServicioUsuario.Controllers
             }
 
             db.Usuarios.Add(usuarios);
-            db.SaveChanges();
-
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                if (UsuariosExists(usuarios.idUsuario))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
             return CreatedAtRoute("DefaultApi", new { id = usuarios.idUsuario }, usuarios);
         }
 
+        
         // DELETE: api/Usuarios/5
         [ResponseType(typeof(Usuarios))]
         public IHttpActionResult DeleteUsuarios(int id)

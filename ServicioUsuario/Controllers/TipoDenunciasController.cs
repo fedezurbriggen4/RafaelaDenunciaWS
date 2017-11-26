@@ -17,9 +17,10 @@ namespace ServicioUsuario.Controllers
         private RafaelaDenunciaEntities db = new RafaelaDenunciaEntities();
 
         // GET: api/TipoDenuncias
-        public IQueryable<TipoDenuncias> GetTipoDenuncias()
+        public List<TipoDenuncias> GetTipoDenuncias()
         {
-            return db.TipoDenuncias;
+            var result = db.TipoDenuncias.ToList();
+            return result;
         }
 
         // GET: api/TipoDenuncias/5

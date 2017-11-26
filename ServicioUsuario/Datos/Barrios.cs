@@ -12,16 +12,9 @@ namespace ServicioUsuario.Datos
     using System;
     using System.Collections.Generic;
     
-    public partial class Denuncias
+    public partial class Barrios
     {
-        public int numDenuncia { get; set; }
-        public string tituloDenuncia { get; set; }
-        public string detalleDenuncia { get; set; }
-        public double latitudDenuncia { get; set; }
-        public double longitudDenuncia { get; set; }
-        public int idUsuario { get; set; }
-        public int tipoDenuncia { get; set; }
-        public System.DateTime fechaHoraDenuncia { get; set; }
-        public Nullable<int> idBarrio { get; set; }
+        public int idBarrio { get; set; }
+        public string nombreBarrio { get; set; }
     }
 }

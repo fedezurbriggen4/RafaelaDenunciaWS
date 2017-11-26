@@ -4,10 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a0385690129c49dc8f58004029894648" Name="Diagram1">
-        <EntityTypeShape EntityType="RafaelaDenunciaModel.Denuncias" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RafaelaDenunciaModel.TipoDenuncias" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RafaelaDenunciaModel.Usuarios" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+      <Diagram DiagramId="bd776688203641cd965a6a50565e55c4" Name="Diagram1">
+        <EntityTypeShape EntityType="RafaelaDenunciaModel.Barrios" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RafaelaDenunciaModel.Denuncias" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RafaelaDenunciaModel.TipoDenuncias" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RafaelaDenunciaModel.Usuarios" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,6 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="RafaelaDenunciaModelStoreContainer" CdmEntityContainer="RafaelaDenunciaEntities1">
+    <EntitySetMapping Name="Barrios">
+      <EntityTypeMapping TypeName="RafaelaDenunciaModel.Barrios">
+        <MappingFragment StoreEntitySet="Barrios">
+          <ScalarProperty Name="idBarrio" ColumnName="idBarrio" />
+          <ScalarProperty Name="nombreBarrio" ColumnName="nombreBarrio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Denuncias">
       <EntityTypeMapping TypeName="RafaelaDenunciaModel.Denuncias">
         <MappingFragment StoreEntitySet="Denuncias">
@@ -12,6 +20,7 @@
           <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
           <ScalarProperty Name="tipoDenuncia" ColumnName="tipoDenuncia" />
           <ScalarProperty Name="fechaHoraDenuncia" ColumnName="fechaHoraDenuncia" />
+          <ScalarProperty Name="idBarrio" ColumnName="idBarrio" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -35,6 +44,8 @@
           <ScalarProperty Name="direccionCasa" ColumnName="direccionCasa" />
           <ScalarProperty Name="latitudCasa" ColumnName="latitudCasa" />
           <ScalarProperty Name="longitudCasa" ColumnName="longitudCasa" />
+          <ScalarProperty Name="idBarrio" ColumnName="idBarrio" />
+          <ScalarProperty Name="telContacto" ColumnName="telContacto" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

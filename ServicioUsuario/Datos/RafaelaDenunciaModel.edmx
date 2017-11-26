@@ -5,18 +5,26 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="RafaelaDenunciaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Barrios">
+          <Key>
+            <PropertyRef Name="idBarrio" />
+          </Key>
+          <Property Name="idBarrio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreBarrio" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Denuncias">
           <Key>
             <PropertyRef Name="numDenuncia" />
           </Key>
-          <Property Name="numDenuncia" Type="int" Nullable="false" />
+          <Property Name="numDenuncia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="tituloDenuncia" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="detalleDenuncia" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="latitudDenuncia" Type="float" />
-          <Property Name="longitudDenuncia" Type="float" />
+          <Property Name="latitudDenuncia" Type="float" Nullable="false" />
+          <Property Name="longitudDenuncia" Type="float" Nullable="false" />
           <Property Name="idUsuario" Type="int" Nullable="false" />
           <Property Name="tipoDenuncia" Type="int" Nullable="false" />
           <Property Name="fechaHoraDenuncia" Type="datetime" Nullable="false" />
+          <Property Name="idBarrio" Type="int" />
         </EntityType>
         <EntityType Name="TipoDenuncias">
           <Key>
@@ -38,8 +46,11 @@
           <Property Name="direccionCasa" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="latitudCasa" Type="float" />
           <Property Name="longitudCasa" Type="float" />
+          <Property Name="idBarrio" Type="int" Nullable="false" />
+          <Property Name="telContacto" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityContainer Name="RafaelaDenunciaModelStoreContainer">
+          <EntitySet Name="Barrios" EntityType="Self.Barrios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Denuncias" EntityType="Self.Denuncias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
@@ -49,18 +60,26 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RafaelaDenunciaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Barrios">
+          <Key>
+            <PropertyRef Name="idBarrio" />
+          </Key>
+          <Property Name="idBarrio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreBarrio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <EntityType Name="Denuncias">
           <Key>
             <PropertyRef Name="numDenuncia" />
           </Key>
-          <Property Name="numDenuncia" Type="Int32" Nullable="false" />
+          <Property Name="numDenuncia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="tituloDenuncia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="detalleDenuncia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="latitudDenuncia" Type="Double" />
-          <Property Name="longitudDenuncia" Type="Double" />
+          <Property Name="latitudDenuncia" Type="Double" Nullable="false" />
+          <Property Name="longitudDenuncia" Type="Double" Nullable="false" />
           <Property Name="idUsuario" Type="Int32" Nullable="false" />
           <Property Name="tipoDenuncia" Type="Int32" Nullable="false" />
           <Property Name="fechaHoraDenuncia" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="idBarrio" Type="Int32" />
         </EntityType>
         <EntityType Name="TipoDenuncias">
           <Key>
@@ -82,8 +101,11 @@
           <Property Name="direccionCasa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="latitudCasa" Type="Double" />
           <Property Name="longitudCasa" Type="Double" />
+          <Property Name="idBarrio" Type="Int32" Nullable="false" />
+          <Property Name="telContacto" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityContainer Name="RafaelaDenunciaEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Barrios" EntityType="Self.Barrios" />
           <EntitySet Name="Denuncias" EntityType="Self.Denuncias" />
           <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
@@ -94,6 +116,14 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="RafaelaDenunciaModelStoreContainer" CdmEntityContainer="RafaelaDenunciaEntities1">
+          <EntitySetMapping Name="Barrios">
+            <EntityTypeMapping TypeName="RafaelaDenunciaModel.Barrios">
+              <MappingFragment StoreEntitySet="Barrios">
+                <ScalarProperty Name="idBarrio" ColumnName="idBarrio" />
+                <ScalarProperty Name="nombreBarrio" ColumnName="nombreBarrio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Denuncias">
             <EntityTypeMapping TypeName="RafaelaDenunciaModel.Denuncias">
               <MappingFragment StoreEntitySet="Denuncias">
@@ -105,6 +135,7 @@
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="tipoDenuncia" ColumnName="tipoDenuncia" />
                 <ScalarProperty Name="fechaHoraDenuncia" ColumnName="fechaHoraDenuncia" />
+                <ScalarProperty Name="idBarrio" ColumnName="idBarrio" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -128,6 +159,8 @@
                 <ScalarProperty Name="direccionCasa" ColumnName="direccionCasa" />
                 <ScalarProperty Name="latitudCasa" ColumnName="latitudCasa" />
                 <ScalarProperty Name="longitudCasa" ColumnName="longitudCasa" />
+                <ScalarProperty Name="idBarrio" ColumnName="idBarrio" />
+                <ScalarProperty Name="telContacto" ColumnName="telContacto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -23,5 +23,7 @@ namespace ServicioUsuario.Datos
         public string direccionCasa { get; set; }
         public Nullable<double> latitudCasa { get; set; }
         public Nullable<double> longitudCasa { get; set; }
+        public int idBarrio { get; set; }
+        public string telContacto { get; set; }
     }
 }
