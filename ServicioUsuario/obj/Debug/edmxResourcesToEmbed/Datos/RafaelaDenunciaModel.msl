@@ -49,5 +49,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Perdidas">
+      <EntityTypeMapping TypeName="RafaelaDenunciaModel.Perdidas">
+        <MappingFragment StoreEntitySet="Perdidas">
+          <ScalarProperty Name="imagenPerdida" ColumnName="imagenPerdida" />
+          <ScalarProperty Name="numeroUsuarioPerdida" ColumnName="numeroUsuarioPerdida" />
+          <ScalarProperty Name="idUsuarioPerdida" ColumnName="idUsuarioPerdida" />
+          <ScalarProperty Name="descripcionPerdida" ColumnName="descripcionPerdida" />
+          <ScalarProperty Name="tituloPerdida" ColumnName="tituloPerdida" />
+          <ScalarProperty Name="idPerdida" ColumnName="idPerdida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

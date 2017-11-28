@@ -49,5 +49,17 @@
     <EntitySet Name="Denuncias" EntityType="Self.Denuncias" />
     <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+    <EntitySet Name="Perdidas" EntityType="RafaelaDenunciaModel.Perdidas" />
   </EntityContainer>
+  <EntityType Name="Perdidas">
+    <Key>
+      <PropertyRef Name="idPerdida" />
+    </Key>
+    <Property Name="idPerdida" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tituloPerdida" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="descripcionPerdida" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="idUsuarioPerdida" Type="Int32" Nullable="false" />
+    <Property Name="numeroUsuarioPerdida" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="imagenPerdida" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

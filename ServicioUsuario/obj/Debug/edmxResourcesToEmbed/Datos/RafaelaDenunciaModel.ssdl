@@ -21,6 +21,17 @@
     <Property Name="fechaHoraDenuncia" Type="datetime" Nullable="false" />
     <Property Name="idBarrio" Type="int" />
   </EntityType>
+  <EntityType Name="Perdidas">
+    <Key>
+      <PropertyRef Name="idPerdida" />
+    </Key>
+    <Property Name="idPerdida" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tituloPerdida" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="descripcionPerdida" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="idUsuarioPerdida" Type="int" Nullable="false" />
+    <Property Name="numeroUsuarioPerdida" Type="nvarchar" MaxLength="30" />
+    <Property Name="imagenPerdida" Type="nvarchar" MaxLength="300" />
+  </EntityType>
   <EntityType Name="TipoDenuncias">
     <Key>
       <PropertyRef Name="tipoDenuncia" />
@@ -47,6 +58,7 @@
   <EntityContainer Name="RafaelaDenunciaModelStoreContainer">
     <EntitySet Name="Barrios" EntityType="Self.Barrios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Denuncias" EntityType="Self.Denuncias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Perdidas" EntityType="Self.Perdidas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

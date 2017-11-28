@@ -216,3 +216,4 @@ C:\Users\federico\source\repos\RafaelaDenunciaWS\ServicioUsuario\bin\es\System.W
 C:\Users\federico\source\repos\RafaelaDenunciaWS\ServicioUsuario\obj\Debug\ServicioUsuario.csproj.CoreCompileInputs.cache
 C:\Users\federico\source\repos\RafaelaDenunciaWS\ServicioUsuario\obj\Debug\ServicioUsuario.dll
 C:\Users\federico\source\repos\RafaelaDenunciaWS\ServicioUsuario\obj\Debug\ServicioUsuario.pdb
+C:\Users\federico\source\repos\RafaelaDenunciaWS\ServicioUsuario\obj\Debug\ServicioUsuario.csprojResolveAssemblyReference.cache
