@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="db618888a72af645089397a82a0157c236Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="RafaelaDenunciaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Barrios">
           <Key>
             <PropertyRef Name="idBarrio" />
@@ -61,7 +61,7 @@
           <Property Name="idBarrio" Type="int" Nullable="false" />
           <Property Name="telContacto" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="db618888a72af645089397a82a0157c236ModelStoreContainer">
+        <EntityContainer Name="RafaelaDenunciaModelStoreContainer">
           <EntitySet Name="Barrios" EntityType="Self.Barrios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Denuncias" EntityType="Self.Denuncias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Perdidas" EntityType="Self.Perdidas" Schema="dbo" store:Type="Tables" />
@@ -72,7 +72,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="db618888a72af645089397a82a0157c236Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="RafaelaDenunciaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Barrios">
           <Key>
             <PropertyRef Name="idBarrio" />
@@ -129,7 +129,7 @@
           <Property Name="idBarrio" Type="Int32" Nullable="false" />
           <Property Name="telContacto" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="db618888a72af645089397a82a0157c236Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Barrios" EntityType="Self.Barrios" />
           <EntitySet Name="Denuncias" EntityType="Self.Denuncias" />
           <EntitySet Name="Perdidas" EntityType="Self.Perdidas" />
@@ -141,9 +141,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="db618888a72af645089397a82a0157c236ModelStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="RafaelaDenunciaModelStoreContainer" CdmEntityContainer="db618888a72af645089397a82a0157c236Entities">
           <EntitySetMapping Name="Barrios">
-            <EntityTypeMapping TypeName="db618888a72af645089397a82a0157c236Model.Barrios">
+            <EntityTypeMapping TypeName="RafaelaDenunciaModel.Barrios">
               <MappingFragment StoreEntitySet="Barrios">
                 <ScalarProperty Name="idBarrio" ColumnName="idBarrio" />
                 <ScalarProperty Name="nombreBarrio" ColumnName="nombreBarrio" />
@@ -151,7 +151,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Denuncias">
-            <EntityTypeMapping TypeName="db618888a72af645089397a82a0157c236Model.Denuncias">
+            <EntityTypeMapping TypeName="RafaelaDenunciaModel.Denuncias">
               <MappingFragment StoreEntitySet="Denuncias">
                 <ScalarProperty Name="numDenuncia" ColumnName="numDenuncia" />
                 <ScalarProperty Name="tituloDenuncia" ColumnName="tituloDenuncia" />
@@ -166,7 +166,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Perdidas">
-            <EntityTypeMapping TypeName="db618888a72af645089397a82a0157c236Model.Perdidas">
+            <EntityTypeMapping TypeName="RafaelaDenunciaModel.Perdidas">
               <MappingFragment StoreEntitySet="Perdidas">
                 <ScalarProperty Name="idPerdida" ColumnName="idPerdida" />
                 <ScalarProperty Name="tituloPerdida" ColumnName="tituloPerdida" />
@@ -179,7 +179,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TipoDenuncias">
-            <EntityTypeMapping TypeName="db618888a72af645089397a82a0157c236Model.TipoDenuncias">
+            <EntityTypeMapping TypeName="RafaelaDenunciaModel.TipoDenuncias">
               <MappingFragment StoreEntitySet="TipoDenuncias">
                 <ScalarProperty Name="tipoDenuncia" ColumnName="tipoDenuncia" />
                 <ScalarProperty Name="nombreTipoDenuncia" ColumnName="nombreTipoDenuncia" />
@@ -187,7 +187,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Usuarios">
-            <EntityTypeMapping TypeName="db618888a72af645089397a82a0157c236Model.Usuarios">
+            <EntityTypeMapping TypeName="RafaelaDenunciaModel.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
