@@ -13,10 +13,10 @@ namespace ServicioUsuario.Datos
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RafaelaDenunciaEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public RafaelaDenunciaEntities()
-            : base("name=RafaelaDenunciaEntities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -27,8 +27,8 @@ namespace ServicioUsuario.Datos
     
         public virtual DbSet<Barrios> Barrios { get; set; }
         public virtual DbSet<Denuncias> Denuncias { get; set; }
+        public virtual DbSet<Perdidas> Perdidas { get; set; }
         public virtual DbSet<TipoDenuncias> TipoDenuncias { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
-        public virtual DbSet<Perdidas> Perdidas { get; set; }
     }
 }

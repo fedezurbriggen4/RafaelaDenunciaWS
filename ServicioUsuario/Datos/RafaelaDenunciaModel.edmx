@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="RafaelaDenunciaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="db618888a72af645089397a82a0157c236Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Barrios">
           <Key>
             <PropertyRef Name="idBarrio" />
@@ -36,6 +36,7 @@
           <Property Name="idUsuarioPerdida" Type="int" Nullable="false" />
           <Property Name="numeroUsuarioPerdida" Type="nvarchar" MaxLength="30" />
           <Property Name="imagenPerdida" Type="nvarchar" MaxLength="300" />
+          <Property Name="fyhPerdida" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="TipoDenuncias">
           <Key>
@@ -60,17 +61,18 @@
           <Property Name="idBarrio" Type="int" Nullable="false" />
           <Property Name="telContacto" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="RafaelaDenunciaModelStoreContainer">
+        <EntityContainer Name="db618888a72af645089397a82a0157c236ModelStoreContainer">
           <EntitySet Name="Barrios" EntityType="Self.Barrios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Denuncias" EntityType="Self.Denuncias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Perdidas" EntityType="Self.Perdidas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="RafaelaDenunciaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="db618888a72af645089397a82a0157c236Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Barrios">
           <Key>
             <PropertyRef Name="idBarrio" />
@@ -91,6 +93,18 @@
           <Property Name="tipoDenuncia" Type="Int32" Nullable="false" />
           <Property Name="fechaHoraDenuncia" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="idBarrio" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Perdidas">
+          <Key>
+            <PropertyRef Name="idPerdida" />
+          </Key>
+          <Property Name="idPerdida" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tituloPerdida" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="descripcionPerdida" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idUsuarioPerdida" Type="Int32" Nullable="false" />
+          <Property Name="numeroUsuarioPerdida" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="imagenPerdida" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="fyhPerdida" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="TipoDenuncias">
           <Key>
@@ -115,32 +129,21 @@
           <Property Name="idBarrio" Type="Int32" Nullable="false" />
           <Property Name="telContacto" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="RafaelaDenunciaEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Barrios" EntityType="Self.Barrios" />
           <EntitySet Name="Denuncias" EntityType="Self.Denuncias" />
+          <EntitySet Name="Perdidas" EntityType="Self.Perdidas" />
           <EntitySet Name="TipoDenuncias" EntityType="Self.TipoDenuncias" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
-          <EntitySet Name="Perdidas" EntityType="RafaelaDenunciaModel.Perdidas" />
         </EntityContainer>
-        <EntityType Name="Perdidas">
-          <Key>
-            <PropertyRef Name="idPerdida" />
-          </Key>
-          <Property Name="idPerdida" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="tituloPerdida" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="descripcionPerdida" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="idUsuarioPerdida" Type="Int32" Nullable="false" />
-          <Property Name="numeroUsuarioPerdida" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="imagenPerdida" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="RafaelaDenunciaModelStoreContainer" CdmEntityContainer="RafaelaDenunciaEntities1">
+        <EntityContainerMapping StorageEntityContainer="db618888a72af645089397a82a0157c236ModelStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="Barrios">
-            <EntityTypeMapping TypeName="RafaelaDenunciaModel.Barrios">
+            <EntityTypeMapping TypeName="db618888a72af645089397a82a0157c236Model.Barrios">
               <MappingFragment StoreEntitySet="Barrios">
                 <ScalarProperty Name="idBarrio" ColumnName="idBarrio" />
                 <ScalarProperty Name="nombreBarrio" ColumnName="nombreBarrio" />
@@ -148,7 +151,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Denuncias">
-            <EntityTypeMapping TypeName="RafaelaDenunciaModel.Denuncias">
+            <EntityTypeMapping TypeName="db618888a72af645089397a82a0157c236Model.Denuncias">
               <MappingFragment StoreEntitySet="Denuncias">
                 <ScalarProperty Name="numDenuncia" ColumnName="numDenuncia" />
                 <ScalarProperty Name="tituloDenuncia" ColumnName="tituloDenuncia" />
@@ -162,8 +165,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Perdidas">
+            <EntityTypeMapping TypeName="db618888a72af645089397a82a0157c236Model.Perdidas">
+              <MappingFragment StoreEntitySet="Perdidas">
+                <ScalarProperty Name="idPerdida" ColumnName="idPerdida" />
+                <ScalarProperty Name="tituloPerdida" ColumnName="tituloPerdida" />
+                <ScalarProperty Name="descripcionPerdida" ColumnName="descripcionPerdida" />
+                <ScalarProperty Name="idUsuarioPerdida" ColumnName="idUsuarioPerdida" />
+                <ScalarProperty Name="numeroUsuarioPerdida" ColumnName="numeroUsuarioPerdida" />
+                <ScalarProperty Name="imagenPerdida" ColumnName="imagenPerdida" />
+                <ScalarProperty Name="fyhPerdida" ColumnName="fyhPerdida" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TipoDenuncias">
-            <EntityTypeMapping TypeName="RafaelaDenunciaModel.TipoDenuncias">
+            <EntityTypeMapping TypeName="db618888a72af645089397a82a0157c236Model.TipoDenuncias">
               <MappingFragment StoreEntitySet="TipoDenuncias">
                 <ScalarProperty Name="tipoDenuncia" ColumnName="tipoDenuncia" />
                 <ScalarProperty Name="nombreTipoDenuncia" ColumnName="nombreTipoDenuncia" />
@@ -171,7 +187,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Usuarios">
-            <EntityTypeMapping TypeName="RafaelaDenunciaModel.Usuarios">
+            <EntityTypeMapping TypeName="db618888a72af645089397a82a0157c236Model.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
@@ -184,18 +200,6 @@
                 <ScalarProperty Name="longitudCasa" ColumnName="longitudCasa" />
                 <ScalarProperty Name="idBarrio" ColumnName="idBarrio" />
                 <ScalarProperty Name="telContacto" ColumnName="telContacto" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Perdidas">
-            <EntityTypeMapping TypeName="RafaelaDenunciaModel.Perdidas">
-              <MappingFragment StoreEntitySet="Perdidas">
-                <ScalarProperty Name="imagenPerdida" ColumnName="imagenPerdida" />
-                <ScalarProperty Name="numeroUsuarioPerdida" ColumnName="numeroUsuarioPerdida" />
-                <ScalarProperty Name="idUsuarioPerdida" ColumnName="idUsuarioPerdida" />
-                <ScalarProperty Name="descripcionPerdida" ColumnName="descripcionPerdida" />
-                <ScalarProperty Name="tituloPerdida" ColumnName="tituloPerdida" />
-                <ScalarProperty Name="idPerdida" ColumnName="idPerdida" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

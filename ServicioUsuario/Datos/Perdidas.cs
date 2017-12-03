@@ -20,5 +20,6 @@ namespace ServicioUsuario.Datos
         public int idUsuarioPerdida { get; set; }
         public string numeroUsuarioPerdida { get; set; }
         public string imagenPerdida { get; set; }
+        public System.DateTime fyhPerdida { get; set; }
     }
 }

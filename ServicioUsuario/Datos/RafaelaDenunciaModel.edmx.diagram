@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bd776688203641cd965a6a50565e55c4" Name="Diagram1">
-        <EntityTypeShape EntityType="RafaelaDenunciaModel.Barrios" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RafaelaDenunciaModel.Denuncias" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RafaelaDenunciaModel.TipoDenuncias" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RafaelaDenunciaModel.Usuarios" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RafaelaDenunciaModel.Perdidas" Width="1.5" PointX="3.375" PointY="4.75" />
+      <Diagram DiagramId="76d717bd4eea40b7a1e8d3896043b0b3" Name="Diagram1">
+        <EntityTypeShape EntityType="db618888a72af645089397a82a0157c236Model.Barrios" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db618888a72af645089397a82a0157c236Model.Denuncias" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db618888a72af645089397a82a0157c236Model.Perdidas" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db618888a72af645089397a82a0157c236Model.TipoDenuncias" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db618888a72af645089397a82a0157c236Model.Usuarios" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
